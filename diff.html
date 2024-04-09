@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <title>*Diff*</title>
+<meta name="generator" content="emacs 27.1; htmlfontify 0.21" />
+<style type="text/css"><!-- 
+body, pre { font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  color: #cccccc;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.default   { font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  color: #cccccc;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.default a { font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  color: #cccccc;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-refine-added-0003   { color: #66cccc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-refine-added-0003 a { color: #66cccc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-refine-removed-0002   { color: #f2777a;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-refine-removed-0002 a { color: #f2777a;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-refine-added-0001   { color: #66cccc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-refine-added-0001 a { color: #66cccc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-refine-removed-0000   { color: #f2777a;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-refine-removed-0000 a { color: #f2777a;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-added   { color: #99cc99;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-added a { color: #99cc99;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-indicator-added   { color: #99cc99;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-indicator-added a { color: #99cc99;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-removed   { color: #f99157;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-removed a { color: #f99157;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-indicator-removed   { color: #f99157;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-indicator-removed a { color: #f99157;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-context   { font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  color: #cccccc;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-context a { font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  color: #cccccc;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-hunk-header   { color: #cc99cc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-hunk-header a { color: #cc99cc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-file-header   { color: #6699cc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-file-header a { color: #6699cc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+span.diff-header   { color: #66cccc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: none; }
+span.diff-header a { color: #66cccc;  font-family: PragmataPro;  font-stretch: normal;  font-weight: 500;  font-style: normal;  background: #2d2d2d;  font-size: 11pt;  text-decoration: underline; }
+ --></style>
+
+    <script type="text/javascript"><!--
+  // this function is needed to work around
+  // a bug in IE related to element attributes
+  function hasClass(obj)
+  {
+      var result = false;
+      if (obj.getAttributeNode("class") != null)
+      {
+          result = obj.getAttributeNode("class").value;
+      }
+      return result;
+  }
+
+  function stripe(id)
+  {
+      // the flag we'll use to keep track of
+      // whether the current row is odd or even
+      var even = false;
+
+      // if arguments are provided to specify the colors
+      // of the even & odd rows, then use them;
+      // otherwise use the following defaults:
+      var evenColor = arguments[1] ? arguments[1] : "#fff";
+      var oddColor  = arguments[2] ? arguments[2] : "#ddd";
+
+      // obtain a reference to the desired table
+      // if no such table exists, abort
+      var table = document.getElementById(id);
+      if (! table) { return; }
+
+      // by definition, tables can have more than one tbody
+      // element, so we'll have to get the list of child
+      // &lt;tbody&gt;s
+      var tbodies = table.getElementsByTagName("tbody");
+
+      // and iterate through them...
+      for (var h = 0; h < tbodies.length; h++)
+      {
+          // find all the &lt;tr&gt; elements...
+          var trs = tbodies[h].getElementsByTagName("tr");
+
+          // ... and iterate through them
+          for (var i = 0; i < trs.length; i++)
+          {
+              // avoid rows that have a class attribute
+              // or backgroundColor style
+              if (! hasClass(trs[i]) &&
+                  ! trs[i].style.backgroundColor)
+              {
+                  // get all the cells in this row...
+                  var tds = trs[i].getElementsByTagName("td");
+
+                  // and iterate through them...
+                  for (var j = 0; j < tds.length; j++)
+                  {
+                      var mytd = tds[j];
+
+                      // avoid cells that have a class attribute
+                      // or backgroundColor style
+                      if (! hasClass(mytd) &&
+                          ! mytd.style.backgroundColor)
+                      {
+                          mytd.style.backgroundColor =
+                            even ? evenColor : oddColor;
+                      }
+                  }
+              }
+              // flip from odd to even, or vice-versa
+              even =  ! even;
+          }
+      }
+  }
+
+  function toggle_invis( name )
+  {
+      var filter =
+        { acceptNode:
+          function( node )
+          { var classname = node.id;
+            if( classname )
+            { var classbase = classname.substr( 0, name.length );
+              if( classbase == name ) { return NodeFilter.FILTER_ACCEPT; } }
+            return NodeFilter.FILTER_SKIP; } };
+      var walker = document.createTreeWalker( document.body           ,
+                                              NodeFilter.SHOW_ELEMENT ,
+                                              filter                  ,
+                                              false                   );
+      while( walker.nextNode() )
+      {
+          var e = walker.currentNode;
+          if( e.style.display == "none" ) { e.style.display = "inline"; }
+          else                            { e.style.display = "none";   }
+      }
+  }
+--> </script>
+  </head>
+  <body onload="stripe('index'); return true;">
+
+<pre><span class="diff-header">diff -u --label \#\&lt;buffer\ jia_560_function_sizes.txt\&gt; --label \#\&lt;buffer\ jia_561_function_sizes.txt\&gt; /tmp/buffer-content-1VM3zH /tmp/buffer-content-0NoXMi
+--- </span><span class="diff-file-header">#&lt;buffer jia_560_function_sizes.txt&gt;</span><span class="diff-header">
++++ </span><span class="diff-file-header">#&lt;buffer jia_561_function_sizes.txt&gt;</span><span class="diff-header">
+</span><span class="diff-hunk-header">@@ -1,287 +1,287 @@</span>
+<span class="diff-context"> 
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">liblzma_la-crc64-fast-5.6.0.o:     file format elf64-x86-64
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">liblzma_la-crc64-fast-5.6.0.o
+</span><span class="diff-indicator-added">+</span><span class="diff-added">liblzma_la-crc64-fast-5.6.1.o:     file format elf64-x86-64
+</span><span class="diff-indicator-added">+</span><span class="diff-added">liblzma_la-crc64-fast-5.6.1.o
+</span><span class="diff-context"> architecture: i386:x86-64, flags 0x00000011:
+ HAS_RELOC, HAS_SYMS
+ start address 0x0000000000000000
+ 
+ Sections:
+ Idx Name          Size      VMA               LMA               File off  Algn
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  0 .text         00000000  0000000000000000  0000000000000000  00000040  2**0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  0 .note.gnu.property 00000020  0000000000000000  0000000000000000  00000040  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  1 .text         00000000  0000000000000000  0000000000000000  00000060  2**0
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  1 .text.x86_codd 00000a9f  0000000000000000  0000000000000000  00000040  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  2 .text.x86_codd 00000a9f  0000000000000000  0000000000000000  00000060  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  2 .text.lzma_block_buffer_encoda 0000004b  0000000000000000  0000000000000000  00000ae0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  3 .text.lzma_block_buffer_encoda 0000004b  0000000000000000  0000000000000000  00000b00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  3 .text.lzma_raw_coder_memusaga 00000085  0000000000000000  0000000000000000  00000b30  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  4 .text.lzma_raw_coder_memusaga 00000085  0000000000000000  0000000000000000  00000b50  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  4 .text.lzma2_encoder_inia 000000f0  0000000000000000  0000000000000000  00000bc0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  5 .text.lzma2_encoder_inia 000000f0  0000000000000000  0000000000000000  00000be0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  5 .text.lzma_optimum_normaa 000000a2  0000000000000000  0000000000000000  00000cb0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  6 .text.lzma_optimum_normaa 000000a2  0000000000000000  0000000000000000  00000cd0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  6 .text.lzma_filters_updata 0000016e  0000000000000000  0000000000000000  00000d60  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  7 .text.lzma_filters_updata 0000016e  0000000000000000  0000000000000000  00000d80  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  7 .text.lzma_raw_encodea 000000a2  0000000000000000  0000000000000000  00000ed0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  8 .text.lzma_raw_encodea 000000a2  0000000000000000  0000000000000000  00000ef0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  8 .text.lzma_mt_block_siza 000000b2  0000000000000000  0000000000000000  00000f80  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">  9 .text.lzma_mt_block_siza 000000b2  0000000000000000  0000000000000000  00000fa0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">  9 .text.stream_encoda 0000003e  0000000000000000  0000000000000000  00001040  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 10 .text.stream_encoda 0000003e  0000000000000000  0000000000000000  00001060  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 10 .text.lzma_properties_siza 000000b5  0000000000000000  0000000000000000  00001080  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 11 .text.lzma_properties_siza 000000b5  0000000000000000  0000000000000000  000010a0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 11 .text.stream_encoder_mt_inia 0000004f  0000000000000000  0000000000000000  00001140  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 12 .text.stream_encoder_mt_inia 0000004f  0000000000000000  0000000000000000  00001160  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 12 .text.lzma_simple_x86_decoder_inif 00000097  0000000000000000  0000000000000000  00001190  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 13 .text.lzma_simple_x86_decoder_inif 00000097  0000000000000000  0000000000000000  000011b0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 13 .text.stream_decoda 0000002c  0000000000000000  0000000000000000  00001230  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 14 .text.stream_decoda 0000002c  0000000000000000  0000000000000000  00001250  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 14 .text.powerpc_coda 0000015f  0000000000000000  0000000000000000  00001260  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 15 .text.powerpc_coda 0000015f  0000000000000000  0000000000000000  00001280  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 15 .text.parse_bcz 0000000c  0000000000000000  0000000000000000  000013c0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 16 .text.parse_bcz 0000000c  0000000000000000  0000000000000000  000013e0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 16 .text.lzma_simple_props_sizd 0000001d  0000000000000000  0000000000000000  000013d0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 17 .text.lzma_simple_props_sizd 0000001d  0000000000000000  0000000000000000  000013f0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 17 .text.get_literal_prica 000004a1  0000000000000000  0000000000000000  000013f0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 18 .text.get_literal_prica 000004a1  0000000000000000  0000000000000000  00001410  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 18 .text.crc_inia 00000276  0000000000000000  0000000000000000  000018a0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 19 .text.crc_inia 00000276  0000000000000000  0000000000000000  000018c0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 19 .text.crc64_generia 00000079  0000000000000000  0000000000000000  00001b20  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 20 .text.crc64_generia 00000079  0000000000000000  0000000000000000  00001b40  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 20 .text.init_pric_tabla 0000000b  0000000000000000  0000000000000000  00001ba0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 21 .text.init_pric_tabla 0000000b  0000000000000000  0000000000000000  00001bc0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 21 .text.stream_encoder_updata 0000009a  0000000000000000  0000000000000000  00001bb0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 22 .text.stream_encoder_updata 0000009a  0000000000000000  0000000000000000  00001bd0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 22 .text.stream_encoder_updatz 00000185  0000000000000000  0000000000000000  00001c50  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 23 .text.stream_encoder_updatz 00000185  0000000000000000  0000000000000000  00001c70  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 23 .text.lz_encoda 0000009d  0000000000000000  0000000000000000  00001de0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 24 .text.lz_encoda 0000009d  0000000000000000  0000000000000000  00001e00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 24 .text.delta_coder_ena 00000028  0000000000000000  0000000000000000  00001e80  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 25 .text.delta_coder_ena 00000028  0000000000000000  0000000000000000  00001ea0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 25 .text.delta_decoda 0000002b  0000000000000000  0000000000000000  00001eb0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 26 .text.delta_decoda 0000002b  0000000000000000  0000000000000000  00001ed0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 26 .text.lzma_check_updata 000000ae  0000000000000000  0000000000000000  00001ee0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 27 .text.lzma_check_updata 000000ae  0000000000000000  0000000000000000  00001f00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 27 .text.index_tree_appena 00000126  0000000000000000  0000000000000000  00001f90  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 28 .text.index_tree_appena 00000126  0000000000000000  0000000000000000  00001fb0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 28 .text.lzip_decoda 000000ad  0000000000000000  0000000000000000  000020c0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 29 .text.lzip_decoda 000000ad  0000000000000000  0000000000000000  000020e0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 29 .text.microlzma_decoda 00000180  0000000000000000  0000000000000000  00002170  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 30 .text.microlzma_decoda 00000180  0000000000000000  0000000000000000  00002190  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 30 .text.auto_decoda 0000009d  0000000000000000  0000000000000000  000022f0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 31 .text.auto_decoda 0000009d  0000000000000000  0000000000000000  00002310  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 31 .text.hc_find_funa 000000c4  0000000000000000  0000000000000000  00002390  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 32 .text.hc_find_funa 000000c4  0000000000000000  0000000000000000  000023b0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 32 .text.lzma_simple_props_encoda 0000001e  0000000000000000  0000000000000000  00002460  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 33 .text.lzma_simple_props_encoda 0000001e  0000000000000000  0000000000000000  00002480  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 33 .text.lzma_simple_x86_encoder_inia 0000002b  0000000000000000  0000000000000000  00002480  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 34 .text.lzma_simple_x86_encoder_inia 0000002b  0000000000000000  0000000000000000  000024a0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 34 .text.stream_decoder_mt_ena 00000052  0000000000000000  0000000000000000  000024b0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 35 .text.stream_decoder_mt_ena 00000052  0000000000000000  0000000000000000  000024d0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 35 .text.lzma_lz_encoder_memusaga 00000273  0000000000000000  0000000000000000  00002510  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 36 .text.lzma_lz_encoder_memusaga 00000273  0000000000000000  0000000000000000  00002530  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 36 .text.lzma_block_buffer_bound63 0000005c  0000000000000000  0000000000000000  00002790  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 37 .text.lzma_block_buffer_bound63 0000005c  0000000000000000  0000000000000000  000027b0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 37 .text.lzma_delta_decoder_inis 00000072  0000000000000000  0000000000000000  000027f0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 38 .text.lzma_delta_decoder_inis 00000072  0000000000000000  0000000000000000  00002810  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 38 .text.lzma_delta_props_decodd 00000031  0000000000000000  0000000000000000  00002870  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 39 .text.lzma_delta_props_decodd 00000031  0000000000000000  0000000000000000  00002890  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 39 .text.microlzma_decoder_inia 0000003c  0000000000000000  0000000000000000  000028b0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 40 .text.microlzma_decoder_inia 0000003c  0000000000000000  0000000000000000  000028d0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 40 .text.lz_encoder_prepara 00000172  0000000000000000  0000000000000000  000028f0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 41 .text.lz_encoder_prepara 00000172  0000000000000000  0000000000000000  00002910  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 41 .text.reverse_seez 000000bc  0000000000000000  0000000000000000  00002a70  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 42 .text.reverse_seez 000000bc  0000000000000000  0000000000000000  00002a90  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 42 .text.transfora 00000142  0000000000000000  0000000000000000  00002b30  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 43 .text.transfora 00000142  0000000000000000  0000000000000000  00002b50  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 43 .text.lzma_next_filter_inia 000000c3  0000000000000000  0000000000000000  00002c80  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 44 .text.lzma_next_filter_inia 000000c3  0000000000000000  0000000000000000  00002ca0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 44 .text.auto_decoder_iniz 000002b7  0000000000000000  0000000000000000  00002d50  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 45 .text.auto_decoder_iniz 000002b7  0000000000000000  0000000000000000  00002d70  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 45 .text.lzma_lzma_set_out_limia 000002c6  0000000000000000  0000000000000000  00003010  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 46 .text.lzma_lzma_set_out_limia 000002c6  0000000000000000  0000000000000000  00003030  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 46 .text.lzma_auto_decoda 0000007b  0000000000000000  0000000000000000  000032e0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 47 .text.lzma_auto_decoda 0000007b  0000000000000000  0000000000000000  00003300  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 47 .text.lzma_lzma_encoder_resea 00000339  0000000000000000  0000000000000000  00003360  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 48 .text.lzma_lzma_encoder_resea 00000339  0000000000000000  0000000000000000  00003380  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 48 .text.lzma_bufcpa 000001e6  0000000000000000  0000000000000000  000036a0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 49 .text.lzma_bufcpa 000001e6  0000000000000000  0000000000000000  000036c0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 49 .text.lzma_check_finisa 00000097  0000000000000000  0000000000000000  00003890  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 50 .text.lzma_check_finisa 00000097  0000000000000000  0000000000000000  000038b0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 50 .text.lzma_decoder_inia 00000074  0000000000000000  0000000000000000  00003930  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 51 .text.lzma_decoder_inia 00000074  0000000000000000  0000000000000000  00003950  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 51 .text.lzma_delta_coder_inia 0000002e  0000000000000000  0000000000000000  000039b0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 52 .text.lzma_delta_coder_inia 0000002e  0000000000000000  0000000000000000  000039d0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 52 .text.lzma_encoder_inia 0000005a  0000000000000000  0000000000000000  000039e0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 53 .text.lzma_encoder_inia 0000005a  0000000000000000  0000000000000000  00003a00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 53 .text.lzma_file_info_decodea 000002ba  0000000000000000  0000000000000000  00003a40  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 54 .text.lzma_file_info_decodea 000002ba  0000000000000000  0000000000000000  00003a60  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 54 .text.lzma_filter_decoder_is_supportea 0000006e  0000000000000000  0000000000000000  00003d00  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 55 .text.lzma_filter_decoder_is_supportea 0000006e  0000000000000000  0000000000000000  00003d20  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 55 .text.lzma_lzma2_encoder_memusaga 0000005a  0000000000000000  0000000000000000  00003d70  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 56 .text.lzma_lzma2_encoder_memusaga 0000005a  0000000000000000  0000000000000000  00003d90  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 56 .text.lzma_mf_bt4_fina 000001ac  0000000000000000  0000000000000000  00003dd0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 57 .text.lzma_mf_bt4_fina 000001ac  0000000000000000  0000000000000000  00003df0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 57 .text.lzma_stream_decoder_inia 00000014  0000000000000000  0000000000000000  00003f80  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 58 .text.lzma_stream_decoder_inia 00000014  0000000000000000  0000000000000000  00003fa0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 58 .text.lzma_stream_flags_compara 00000014  0000000000000000  0000000000000000  00003fa0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 59 .text.lzma_stream_flags_compara 0000001c  0000000000000000  0000000000000000  00003fc0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 59 .text.lzma_stream_header_encoda 00000038  0000000000000000  0000000000000000  00003fc0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 60 .text.lzma_stream_header_encoda 00000067  0000000000000000  0000000000000000  00003fe0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 60 .text.lzma_stream_header_encodb 0000002e  0000000000000000  0000000000000000  00004000  2**4
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 61 .text.parse_delt1 00000013  0000000000000000  0000000000000000  00004030  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 61 .text.parse_delt1 00000013  0000000000000000  0000000000000000  00004050  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 62 .text.read_output_and_waia 0000002b  0000000000000000  0000000000000000  00004050  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 62 .text.read_output_and_waia 0000002b  0000000000000000  0000000000000000  00004070  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 63 .text.stream_decoder_memconfia 00000013  0000000000000000  0000000000000000  00004080  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 63 .text.stream_decoder_memconfia 00000013  0000000000000000  0000000000000000  000040a0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 64 .text.lzma_delta_props_encoda 000002e8  0000000000000000  0000000000000000  000040a0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 64 .text.lzma_delta_props_encoda 000002e8  0000000000000000  0000000000000000  000040c0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 65 .text.lzma_filter_flags_decoda 0000026b  0000000000000000  0000000000000000  00004390  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 65 .text.lzma_filter_flags_decoda 0000026b  0000000000000000  0000000000000000  000043b0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 66 .text.lzma_index_buffer_encoda 00000076  0000000000000000  0000000000000000  00004600  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 66 .text.lzma_index_buffer_encoda 00000076  0000000000000000  0000000000000000  00004620  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 67 .text.lzma_index_encoder_inia 000003d2  0000000000000000  0000000000000000  00004680  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 67 .text.lzma_index_encoder_inia 000003d2  0000000000000000  0000000000000000  000046a0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 68 .text.lzma_index_stream_flaga 00000097  0000000000000000  0000000000000000  00004a60  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 68 .text.lzma_index_stream_flaga 00000097  0000000000000000  0000000000000000  00004a80  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 69 .text.lzma_index_iter_locata 000003ff  0000000000000000  0000000000000000  00004b00  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 69 .text.lzma_index_iter_locata 000003ff  0000000000000000  0000000000000000  00004b20  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 70 .text.lzma_index_hash_inia 000002f6  0000000000000000  0000000000000000  00004f00  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 70 .text.lzma_index_hash_inia 000002f6  0000000000000000  0000000000000000  00004f20  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 71 .text.lzma_lz_decoder_inia 0000022e  0000000000000000  0000000000000000  00005200  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 71 .text.lzma_lz_decoder_inia 0000022e  0000000000000000  0000000000000000  00005220  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 72 .text.lzma_lzma_optimum_fasa 00000411  0000000000000000  0000000000000000  00005430  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 72 .text.lzma_lzma_optimum_fasa 0000041a  0000000000000000  0000000000000000  00005450  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 73 .text.microlzma_encoder_inia 00001734  0000000000000000  0000000000000000  00005850  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 73 .text.microlzma_encoder_inia 000016f8  0000000000000000  0000000000000000  00005870  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 74 .text.lzma_validate_chaia 000000fe  0000000000000000  0000000000000000  00006f90  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 74 .text.lzma_validate_chaia 000000fe  0000000000000000  0000000000000000  00006f70  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 75 .text.parse_optiona 00000043  0000000000000000  0000000000000000  00007090  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 75 .text.parse_optiona 00000043  0000000000000000  0000000000000000  00007070  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 76 .text.auto_decoder_inia 0000006d  0000000000000000  0000000000000000  000070e0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 76 .text.auto_decoder_inia 0000006d  0000000000000000  0000000000000000  000070c0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 77 .text.bt_find_funa 0000009a  0000000000000000  0000000000000000  00007150  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 77 .text.bt_find_funa 0000009a  0000000000000000  0000000000000000  00007130  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 78 .text.lzma_delta_encoder_inia 0000011f  0000000000000000  0000000000000000  000071f0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 78 .text.lzma_delta_encoder_inia 0000011f  0000000000000000  0000000000000000  000071d0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 79 .text.lzma_easy_encodea 0000006e  0000000000000000  0000000000000000  00007310  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 79 .text.lzma_easy_encodea 0000006e  0000000000000000  0000000000000000  000072f0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 80 .text.lzma_block_decoder_inia 000000d4  0000000000000000  0000000000000000  00007380  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 80 .text.lzma_block_decoder_inia 000000d4  0000000000000000  0000000000000000  00007360  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 81 .text.lzma_block_encoder_updatd 000000a5  0000000000000000  0000000000000000  00007460  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 81 .text.lzma_block_encoder_updatd 000000a5  0000000000000000  0000000000000000  00007440  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 82 .text.lzma_index_ena 00000059  0000000000000000  0000000000000000  00007510  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 82 .text.lzma_index_ena 00000059  0000000000000000  0000000000000000  000074f0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 83 .text.lzma_filters_copa 00000117  0000000000000000  0000000000000000  00007570  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 83 .text.lzma_filters_copa 00000117  0000000000000000  0000000000000000  00007550  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 84 .text.lzma_index_dua 000002e7  0000000000000000  0000000000000000  00007690  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 84 .text.lzma_index_dua 000002e7  0000000000000000  0000000000000000  00007670  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 85 .text.length_encoder_resez 00000030  0000000000000000  0000000000000000  00007980  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 85 .text.length_encoder_resez 00000030  0000000000000000  0000000000000000  00007960  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 86 .text.stream_decoder_mt_get_progresz 000000c6  0000000000000000  0000000000000000  000079b0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 86 .text.stream_decoder_mt_get_progresz 000000c6  0000000000000000  0000000000000000  00007990  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 87 .text.threads_stoz 00000197  0000000000000000  0000000000000000  00007a80  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 87 .text.threads_stoz 00000197  0000000000000000  0000000000000000  00007a60  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 88 .text.index_decoda 0000009b  0000000000000000  0000000000000000  00007c20  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 88 .text.index_decoda 0000009b  0000000000000000  0000000000000000  00007c00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 89 .text.index_encoda 000000ec  0000000000000000  0000000000000000  00007cc0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 89 .text.index_encoda 000000ec  0000000000000000  0000000000000000  00007ca0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 90 .text.lzma_block_unpadded_siza 00000083  0000000000000000  0000000000000000  00007db0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 90 .text.lzma_block_unpadded_siza 00000083  0000000000000000  0000000000000000  00007d90  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 91 .text.lzma_rc_pricea 000000b1  0000000000000000  0000000000000000  00007e40  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 91 .text.lzma_rc_pricea 000000b1  0000000000000000  0000000000000000  00007e20  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 92 .text.stream_encoder_mt_iniz 0000007e  0000000000000000  0000000000000000  00007f00  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 92 .text.stream_encoder_mt_iniz 0000007e  0000000000000000  0000000000000000  00007ee0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 93 .text.worker_stara 0000015a  0000000000000000  0000000000000000  00007f80  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 93 .text.worker_stara 0000015a  0000000000000000  0000000000000000  00007f60  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 94 .text.bt_skip_funz 0000007a  0000000000000000  0000000000000000  000080e0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 94 .text.bt_skip_funz 0000007a  0000000000000000  0000000000000000  000080c0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 95 .text.lzma_coda 000000c3  0000000000000000  0000000000000000  00008160  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 95 .text.lzma_coda 000000c3  0000000000000000  0000000000000000  00008140  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 96 .text.parse_lzma10 0000009e  0000000000000000  0000000000000000  00008230  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 96 .text.parse_lzma10 0000009e  0000000000000000  0000000000000000  00008210  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 97 .text.lzip_decoder_memconfia 00000adf  0000000000000000  0000000000000000  000082d0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 97 .text.lzip_decoder_memconfia 00000adf  0000000000000000  0000000000000000  000082b0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 98 .text.decode_buffez 00000147  0000000000000000  0000000000000000  00008db0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 98 .text.decode_buffez 00000147  0000000000000000  0000000000000000  00008d90  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed"> 99 .text.file_info_decoda 000005f2  0000000000000000  0000000000000000  00008f00  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added"> 99 .text.file_info_decoda 000005f2  0000000000000000  0000000000000000  00008ee0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">100 .text.lzma_index_stream_siza 00000d9d  0000000000000000  0000000000000000  00009500  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">100 .text.lzma_index_stream_siza 00000d9d  0000000000000000  0000000000000000  000094e0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">101 .text.lzma_index_prealloa 0000008d  0000000000000000  0000000000000000  0000a2a0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">101 .text.lzma_index_prealloa 0000008d  0000000000000000  0000000000000000  0000a280  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">102 .text.lzma_index_memusaga 00000060  0000000000000000  0000000000000000  0000a330  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">102 .text.lzma_index_memusaga 00000060  0000000000000000  0000000000000000  0000a310  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">103 .text.lzma_index_inia 00000070  0000000000000000  0000000000000000  0000a390  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">103 .text.lzma_index_inia 00000070  0000000000000000  0000000000000000  0000a370  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">104 .text.parse_lzma12z 00000352  0000000000000000  0000000000000000  0000a400  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">104 .text.parse_lzma12z 00000352  0000000000000000  0000000000000000  0000a3e0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">105 .text._cpuid  0000001f  0000000000000000  0000000000000000  0000a760  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">105 .text._cpuid  0000001f  0000000000000000  0000000000000000  0000a740  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">106 .text._get_cpuia 000000dc  0000000000000000  0000000000000000  0000a780  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">106 .text._get_cpuia 000000dc  0000000000000000  0000000000000000  0000a760  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">107 .text._get_cpuid 00000060  0000000000000000  0000000000000000  0000a860  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">107 .text._get_cpuid 00000060  0000000000000000  0000000000000000  0000a840  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">108 .text.lzma_outq_inia 00000017  0000000000000000  0000000000000000  0000a8c0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">108 .text.lzma_outq_inia 00000017  0000000000000000  0000000000000000  0000a8a0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">109 .text.simple_coder_updata 00000105  0000000000000000  0000000000000000  0000a8e0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">109 .text.simple_coder_updata 00000105  0000000000000000  0000000000000000  0000a8c0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">110 .text.lzma_lzma_encoder_inia 0000006f  0000000000000000  0000000000000000  0000a9f0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">110 .text.lzma_lzma_encoder_inia 0000006f  0000000000000000  0000000000000000  0000a9d0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">111 .text.lzma_memlimit_gea 000000b6  0000000000000000  0000000000000000  0000aa60  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">111 .text.lzma_memlimit_gea 000000b6  0000000000000000  0000000000000000  0000aa40  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">112 .text.rc_read_inis 000000b0  0000000000000000  0000000000000000  0000ab20  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">112 .text.rc_read_inis 000000b0  0000000000000000  0000000000000000  0000ab00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">113 .text.lzma_check_inia 0000001f  0000000000000000  0000000000000000  0000abd0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">113 .text.lzma_check_inia 0000001f  0000000000000000  0000000000000000  0000abb0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">114 .text.lzma2_decoder_ena 0000002d  0000000000000000  0000000000000000  0000abf0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">114 .text.lzma2_decoder_ena 0000002d  0000000000000000  0000000000000000  0000abd0  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">115 .text.lzma_index_iter_rewina 0000001e  0000000000000000  0000000000000000  0000ac20  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">115 .text.lzma_index_iter_rewina 0000001e  0000000000000000  0000000000000000  0000ac00  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">116 .text.lzma_index_memusagz 0000005f  0000000000000000  0000000000000000  0000ac40  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">116 .text.lzma_index_memusagz 0000005f  0000000000000000  0000000000000000  0000ac20  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">117 .text.lzma_block_total_siza 00000086  0000000000000000  0000000000000000  0000aca0  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">117 .text.lzma_block_total_siza 00000086  0000000000000000  0000000000000000  0000ac80  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">118 .rodata.MASK_TO_BIT_NUMBER0 00000080  0000000000000000  0000000000000000  0000ad40  2**5
+</span><span class="diff-indicator-added">+</span><span class="diff-added">118 .rodata.MASK_TO_BIT_NUMBER0 00000080  0000000000000000  0000000000000000  0000ad20  2**5
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">119 .rodata.BRANCH_TABLE0 00000040  0000000000000000  0000000000000000  0000adc0  2**5
+</span><span class="diff-indicator-added">+</span><span class="diff-added">119 .rodata.BRANCH_TABLE0 00000040  0000000000000000  0000000000000000  0000ada0  2**5
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">120 .rodata.get_literal_prica 00000054  0000000000000000  0000000000000000  0000ae00  2**2
+</span><span class="diff-indicator-added">+</span><span class="diff-added">120 .rodata.get_literal_prica 00000054  0000000000000000  0000000000000000  0000ade0  2**2
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">121 .rodata.lzma2_decode 00000008  0000000000000000  0000000000000000  0000ae58  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">121 .rodata.lzma2_decode 00000008  0000000000000000  0000000000000000  0000ae38  2**3
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">122 .rodata.lzma_lzma_encode 00000008  0000000000000000  0000000000000000  0000ae60  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">122 .rodata.lzma_lzma_encode 00000008  0000000000000000  0000000000000000  0000ae40  2**3
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">123 .rodata.lzma_lzma_encodd 000000a0  0000000000000000  0000000000000000  0000ae70  2**4
+</span><span class="diff-indicator-added">+</span><span class="diff-added">123 .rodata.lzma_lzma_encodd 000000a0  0000000000000000  0000000000000000  0000ae50  2**4
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">124 .rodata.lzip_decode0 00001460  0000000000000000  0000000000000000  0000af20  2**5
+</span><span class="diff-indicator-added">+</span><span class="diff-added">124 .rodata.lzip_decode0 00001460  0000000000000000  0000000000000000  0000af00  2**5
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">125 .rodata.crc64_clmul1 00000770  0000000000000000  0000000000000000  0000c380  2**5
+</span><span class="diff-indicator-added">+</span><span class="diff-added">125 .rodata.crc64_clmul1 00000770  0000000000000000  0000000000000000  0000c360  2**5
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">126 .rodata.lzma12_mf_mao.0 00000018  0000000000000000  0000000000000000  0000caf0  2**0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">126 .rodata.lzma12_mf_mao.0 00000018  0000000000000000  0000000000000000  0000cad0  2**0
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">127 .rodata.rc_encode 00000010  0000000000000000  0000000000000000  0000cb08  2**0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">127 .rodata.rc_encode 00000010  0000000000000000  0000000000000000  0000cae8  2**0
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">128 .data         00000000  0000000000000000  0000000000000000  0000cb18  2**0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">128 .data         00000000  0000000000000000  0000000000000000  0000caf8  2**0
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">129 .data.rel.ro.filter_optmap.0 00000008  0000000000000000  0000000000000000  0000cb18  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">129 .data.rel.ro.filter_optmap.0 00000008  0000000000000000  0000000000000000  0000caf8  2**3
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">130 .data.rel.ro.lookup_filter.part.0 00000008  0000000000000000  0000000000000000  0000cb20  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">130 .data.rel.ro.lookup_filter.part.0 00000008  0000000000000000  0000000000000000  0000cb00  2**3
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">131 .data.rel.ro.decoders0 00000020  0000000000000000  0000000000000000  0000cb28  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">131 .data.rel.ro.decoders0 00000020  0000000000000000  0000000000000000  0000cb08  2**3
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">132 .data.rel.ro.encoders0 00000038  0000000000000000  0000000000000000  0000cb48  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">132 .data.rel.ro.encoders0 00000038  0000000000000000  0000000000000000  0000cb28  2**3
+</span><span class="diff-context">                   CONTENTS, ALLOC, LOAD, RELOC, DATA
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">133 .bss          00000000  0000000000000000  0000000000000000  0000cb80  2**0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">133 .bss          00000000  0000000000000000  0000000000000000  0000cb60  2**0
+</span><span class="diff-context">                   ALLOC
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">134 .bss.filter_optionz 00000008  0000000000000000  0000000000000000  0000cb80  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">134 .bss.filter_optionz 00000008  0000000000000000  0000000000000000  0000cb60  2**3
+</span><span class="diff-context">                   ALLOC
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">135 .bss.lzma12_codez 00000008  0000000000000000  0000000000000000  0000cb80  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">135 .bss.lzma12_codez 00000008  0000000000000000  0000000000000000  0000cb60  2**3
+</span><span class="diff-context">                   ALLOC
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">136 .bss.__intr2  00000004  0000000000000000  0000000000000000  0000cb80  2**3
+</span><span class="diff-indicator-added">+</span><span class="diff-added">136 .bss.__intr2  00000004  0000000000000000  0000000000000000  0000cb60  2**3
+</span><span class="diff-context">                   ALLOC
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">137 .note.GNU-stack 00000000  0000000000000000  0000000000000000  0000cb80  2**0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">137 .note.GNU-stack 00000000  0000000000000000  0000000000000000  0000cb60  2**0
+</span><span class="diff-context">                   CONTENTS, READONLY
+ SYMBOL TABLE:
+ 0000000000000000 l    d  .text.lzma_raw_coder_memusaga	0000000000000000 .text.lzma_raw_coder_memusaga
+</span><span class="diff-hunk-header">@@ -345,11 +345,10 @@</span>
+<span class="diff-context"> 0000000000000000 l     F .text.delta_coder_ena	0000000000000028 .hidden .Ldelta_coder_end.1
+ 0000000000000000 l     O .data.rel.ro.lookup_filter.part.0	0000000000000008 .hidden .Llookup_filter.part.0
+ 0000000000000000 l     F .text.lzma_lz_encoder_memusaga	0000000000000052 .hidden .Llzma_lz_encoder_memusage.1
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000000 l     F .text.lzma_stream_flags_compara	</span><span class="diff-refine-removed-0000">0000000000000014</span><span class="diff-removed"> .hidden .Llzma_stream_flags_compare.1
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000000 l     F .text.lzma_stream_flags_compara	</span><span class="diff-refine-added-0001">000000000000001c</span><span class="diff-added"> .hidden .Llzma_stream_flags_compare.1
+</span><span class="diff-context"> 0000000000000000 l     F .text.lzma_rc_pricea	00000000000000b1 .hidden .Llzma_rc_prices.1
+ 0000000000000000 l     F .text.lzma_lzma_encoder_inia	000000000000006f .hidden .Llzma_lzma_encoder_init.0
+ 0000000000000000 l     F .text.lzma2_encoder_inia	00000000000000f0 .hidden .Llzma2_encoder_init.1
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000000 l     F .text.lzma_stream_header_encodb	000000000000002e .hidden .Llzma_block_param_decoder.0
+</span><span class="diff-context"> 0000000000000000 l     F .text.lzma_delta_decoder_inis	0000000000000072 .hidden .Llzma_delta_decoder_init.part.0
+ 0000000000000000 l     F .text.index_tree_appena	0000000000000126 .hidden .Lindex_tree_append.part.0
+ 0000000000000000 l     F .text.parse_delt1	0000000000000013 .hidden .Lparse_delta.0
+</span><span class="diff-hunk-header">@@ -382,7 +381,7 @@</span>
+<span class="diff-context"> 0000000000000000 l     O .rodata.rc_encode	0000000000000000 .hidden .Llzma_block_uncomp_encode.0
+ 0000000000000000 l     F .text.lzma_block_total_siza	0000000000000086 .hidden .Llzma_block_total_size.0
+ 0000000000000000 l     F .text.hc_find_funa	00000000000000c4 .hidden .Lhc_find_func.1
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000000 l     F .text.microlzma_encoder_inia	</span><span class="diff-refine-removed-0000">0000000000001734</span><span class="diff-removed"> .hidden .Lmicrolzma_encoder_init.1
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000000 l     F .text.microlzma_encoder_inia	</span><span class="diff-refine-added-0001">00000000000016f8</span><span class="diff-added"> .hidden .Lmicrolzma_encoder_init.1
+</span><span class="diff-context"> 0000000000000000 l     F .text.lzma_lz_decoder_inia	000000000000022e .hidden .Llzma_lz_decoder_init.0
+ 0000000000000000 l     O .rodata.lzip_decode0	0000000000001460 .hidden .Llzip_decode.1
+ 0000000000000000 l     F .text.lzip_decoder_memconfia	0000000000000adf .hidden .Llzip_decoder_memconfig.part.0
+</span><span class="diff-hunk-header">@@ -409,8 +408,8 @@</span>
+<span class="diff-context"> 0000000000000000 l     F .text.lzma_optimum_normaa	00000000000000a2 .hidden .Llzma_optimum_normal.0
+ 0000000000000000 l     F .text.lzma_delta_props_decodd	0000000000000031 .hidden .Llzma_delta_props_decode.part.0
+ 0000000000000000 l     F .text.lzma_raw_encodea	00000000000000a2 .hidden .Llzma_raw_encoder.0
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000000 l     F .text.lzma_lzma_optimum_fasa	</span><span class="diff-refine-removed-0000">0000000000000411</span><span class="diff-removed"> .hidden .Llzma_lzma_optimum_fast.0
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000000 l     F .text.lzma_stream_header_encoda	</span><span class="diff-refine-removed-0000">0000000000000038</span><span class="diff-removed"> .hidden .Llzma_stream_header_encode.part.0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000000 l     F .text.lzma_lzma_optimum_fasa	</span><span class="diff-refine-added-0001">000000000000041a</span><span class="diff-added"> .hidden .Llzma_lzma_optimum_fast.0
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000000 l     F .text.lzma_stream_header_encoda	</span><span class="diff-refine-added-0001">0000000000000067</span><span class="diff-added"> .hidden .Llzma_stream_header_encode.part.0
+</span><span class="diff-context"> 0000000000000074 l     F .text._get_cpuia	0000000000000068 .hidden .Llzma_block_param_encoder.0
+ 0000000000000000 l     O .rodata.lzma12_mf_mao.0	0000000000000000 .hidden .Llzma_block_buffer_decode.0
+ 0000000000000000 l     F .text.microlzma_decoda	0000000000000180 .hidden .Lmicrolzma_decode.0
+</span><span class="diff-hunk-header">@@ -765,9 +764,9 @@</span>
+<span class="diff-context"> 
+ RELOCATION RECORDS FOR [.text.lzma_stream_header_encoda]:
+ OFFSET           TYPE              VALUE 
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000007 R_X86_64_PC32     .Lx86_coder_destroy-0x0000000000000004
+</span><span class="diff-refine-removed-0002">-</span><span class="diff-refine-removed-0000">000000000000000f</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_stream_flags_compare.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000016</span><span class="diff-removed"> R_X86_64_REX_GOTPCRELX  .Llzma_block_uncomp_encode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000005</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_stream_flags_compare.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000000c</span><span class="diff-added"> R_X86_64_REX_GOTPCRELX  .Llzma_block_uncomp_encode.0</span><span class="diff-refine-added-0001">-0x0000000000000004
+</span><span class="diff-refine-added-0003">+</span><span class="diff-refine-added-0001">0000000000000013 R_X86_64_PC32     .Lx86_coder_destroy</span><span class="diff-added">-0x0000000000000004
+</span><span class="diff-context"> 
+ 
+ RELOCATION RECORDS FOR [.text.parse_delt1]:
+</span><span class="diff-hunk-header">@@ -898,108 +897,107 @@</span>
+<span class="diff-context"> OFFSET           TYPE              VALUE 
+ 0000000000000035 R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+ 0000000000000044 R_X86_64_REX_GOTPCRELX  .Llzip_decoder_memconfig.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000055</span><span class="diff-removed"> R_X86_64_REX_GOTPCRELX  .Llzma_index_stream_size.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000008b</span><span class="diff-removed"> R_X86_64_REX_GOTPCRELX  .</span><span class="diff-refine-removed-0000">Lindex</span><span class="diff-removed">_</span><span class="diff-refine-removed-0000">decode</span><span class="diff-removed">.</span><span class="diff-refine-removed-0000">1</span><span class="diff-removed">-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000000a7 R_X86_64_REX_GOTPCRELX  .Lindex_</span><span class="diff-refine-removed-0000">encode</span><span class="diff-removed">.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000000</span><span class="diff-refine-removed-0000">b6</span><span class="diff-removed"> R_X86_64_REX_GOTPCRELX  .</span><span class="diff-refine-removed-0000">Llzma_check</span><span class="diff-removed">_</span><span class="diff-refine-removed-0000">init.part</span><span class="diff-removed">.</span><span class="diff-refine-removed-0000">0</span><span class="diff-removed">-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000100</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_index_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000013e</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000154</span><span class="diff-removed"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000174</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000019b</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000001</span><span class="diff-refine-removed-0000">ad</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000001</span><span class="diff-refine-removed-0000">c6</span><span class="diff-removed"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000205</span><span class="diff-removed"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000022b</span><span class="diff-removed"> R_X86_64_PC32     .text.lzma_lz_encoder_memusaga+0x000000000000005c
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000260</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_block_buffer_encode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000028b</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma2_encoder_init.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000002</span><span class="diff-refine-removed-0000">c6</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_buf_cpy.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000002</span><span class="diff-refine-removed-0000">e8</span><span class="diff-removed"> R_X86_64_PC32     .text.lzma_lzma_encoder_resea-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">00000000000002fa</span><span class="diff-removed"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000338</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000364</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000037f</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000039f</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000003</span><span class="diff-refine-removed-0000">c7</span><span class="diff-removed"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000003</span><span class="diff-refine-removed-0000">d8</span><span class="diff-removed"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000003</span><span class="diff-refine-removed-0000">e9</span><span class="diff-removed"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000050</span><span class="diff-added"> R_X86_64_REX_GOTPCRELX  .Llzma_index_stream_size.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000093</span><span class="diff-added"> R_X86_64_REX_GOTPCRELX  .</span><span class="diff-refine-added-0001">Llzma</span><span class="diff-added">_</span><span class="diff-refine-added-0001">check_init</span><span class="diff-added">.</span><span class="diff-refine-added-0001">part.0</span><span class="diff-added">-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000000a7 R_X86_64_REX_GOTPCRELX  .Lindex_</span><span class="diff-refine-added-0001">decode</span><span class="diff-added">.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000000</span><span class="diff-refine-added-0001">da</span><span class="diff-added"> R_X86_64_REX_GOTPCRELX  .</span><span class="diff-refine-added-0001">Lindex</span><span class="diff-added">_</span><span class="diff-refine-added-0001">encode</span><span class="diff-added">.</span><span class="diff-refine-added-0001">1</span><span class="diff-added">-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000109</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_index_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000147</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000015d</span><span class="diff-added"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000017d</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000001a4</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000001</span><span class="diff-refine-added-0001">b6</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000001</span><span class="diff-refine-added-0001">cf</span><span class="diff-added"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000020e</span><span class="diff-added"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000234</span><span class="diff-added"> R_X86_64_PC32     .text.lzma_lz_encoder_memusaga+0x000000000000005c
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000269</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_block_buffer_encode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000294</span><span class="diff-added"> R_X86_64_PLT32    .Llzma2_encoder_init.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000002</span><span class="diff-refine-added-0001">cf</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_buf_cpy.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000002</span><span class="diff-refine-added-0001">f1</span><span class="diff-added"> R_X86_64_PC32     .text.lzma_lzma_encoder_resea-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000303</span><span class="diff-added"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000341</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000036d</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000388</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000003a8</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lzma2_encoder_memusage.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000003</span><span class="diff-refine-added-0001">d0</span><span class="diff-added"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000003</span><span class="diff-refine-added-0001">e1</span><span class="diff-added"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000003</span><span class="diff-refine-added-0001">f2</span><span class="diff-added"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-context"> 
+ 
+ RELOCATION RECORDS FOR [.text.microlzma_encoder_inia]:
+ OFFSET           TYPE              VALUE 
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000000</span><span class="diff-refine-removed-0000">da</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_stream_header_encode.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000125</span><span class="diff-removed"> R_X86_64_PLT32    .Lsimple_coder_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">000000000000017</span><span class="diff-refine-removed-0000">d</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_filter_decoder_is_supported.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000018f</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000021f</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_index_stream_flags.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000240</span><span class="diff-removed"> R_X86_64_PC32     .text.lzma_block_buffer_bound63-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000271 R_X86_64_PLT32    .Llzma_block_param_decoder.0-0x0000000000000004
+</span><span class="diff-refine-removed-0002">-</span><span class="diff-refine-removed-0000">000000000000036e</span><span class="diff-removed"> R_X86_64_PC32     .text.auto_decoder_iniz-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000038d</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000004</span><span class="diff-refine-removed-0000">be</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000004</span><span class="diff-refine-removed-0000">e1</span><span class="diff-removed"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000511</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lz_decoder_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000523</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000548</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000055a</span><span class="diff-removed"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000599</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">00000000000005ba</span><span class="diff-removed"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000005</span><span class="diff-refine-removed-0000">eb</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lz_encoder_memusage.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000650</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000678</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">00000000000006</span><span class="diff-removed">a</span><span class="diff-refine-removed-0000">5</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000006</span><span class="diff-refine-removed-0000">ca</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc64_generic.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000006</span><span class="diff-refine-removed-0000">ea</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000718</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000740</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000782</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000007</span><span class="diff-refine-removed-0000">e3</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_lzma_optimum_fast.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000879</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000008</span><span class="diff-refine-removed-0000">c0</span><span class="diff-removed"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000920</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000954</span><span class="diff-removed"> R_X86_64_PC32     .text.reverse_seez-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000988</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000009</span><span class="diff-refine-removed-0000">c5</span><span class="diff-removed"> R_X86_64_PC32     .text.reverse_seez-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000000a02</span><span class="diff-removed"> R_X86_64_PC32     .text.reverse_seez-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000a</span><span class="diff-refine-removed-0000">8b</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">ac5</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_encoder_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">af3</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_encoder_update.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000b</span><span class="diff-refine-removed-0000">27</span><span class="diff-removed"> R_X86_64_PLT32    .Lauto_decode.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000b</span><span class="diff-refine-removed-0000">44</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_properties_size.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000b</span><span class="diff-refine-removed-0000">87</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_encoder_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">bb4</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_encoder_update.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">c16</span><span class="diff-removed"> R_X86_64_PC32     .text.lzma_next_filter_inia-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000c</span><span class="diff-refine-removed-0000">66</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">cc3</span><span class="diff-removed"> R_X86_64_PC32     .text.lzma_next_filter_inia-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000d</span><span class="diff-refine-removed-0000">53</span><span class="diff-removed"> R_X86_64_PLT32    .Lstream_encoder_mt_init.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000d</span><span class="diff-refine-removed-0000">70</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_simple_x86_decoder_init.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">daa</span><span class="diff-removed"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">dc9</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_mf_bt4_find.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">e1a</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">ec5</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_block_buffer_encode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">0000000000000</span><span class="diff-refine-removed-0000">eed</span><span class="diff-removed"> R_X86_64_PLT32    .Lx86_code.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001069</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_filters_update.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001143</span><span class="diff-removed"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001221</span><span class="diff-removed"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001270</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_properties_size.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000012</span><span class="diff-refine-removed-0000">f8</span><span class="diff-removed"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001345</span><span class="diff-removed"> R_X86_64_PC32     .text.transfora-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000139f</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000013</span><span class="diff-refine-removed-0000">c1</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001436</span><span class="diff-removed"> R_X86_64_PC32     .text.microlzma_decoder_inia-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000144f</span><span class="diff-removed"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001476</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000149a</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000014</span><span class="diff-refine-removed-0000">c3</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000014</span><span class="diff-refine-removed-0000">e7</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001510</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001539</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001562</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">000000000000158a</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">00000000000015b4</span><span class="diff-removed"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">00000000000016b6</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-removed">00000000000016</span><span class="diff-refine-removed-0000">dc</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-removed">-</span><span class="diff-refine-removed-0000">0000000000001702</span><span class="diff-removed"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000000</span><span class="diff-refine-added-0001">d7</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_stream_header_encode.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000127</span><span class="diff-added"> R_X86_64_PLT32    .Lsimple_coder_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">000000000000017</span><span class="diff-refine-added-0001">f</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_filter_decoder_is_supported.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000191</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000221</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_index_stream_flags.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000023e</span><span class="diff-added"> R_X86_64_PC32     .text.lzma_block_buffer_bound63-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000351</span><span class="diff-added"> R_X86_64_PC32     .text.auto_decoder_iniz-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000370</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000004</span><span class="diff-refine-added-0001">a3</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000004</span><span class="diff-refine-added-0001">c6</span><span class="diff-added"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000004f6</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lz_decoder_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000508</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_decoder_memconfig.part.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000052d</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000053f</span><span class="diff-added"> R_X86_64_PLT32    lzma_alloc-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000057e</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000059f</span><span class="diff-added"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000005</span><span class="diff-refine-added-0001">d0</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lz_encoder_memusage.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000635</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000065d</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000068</span><span class="diff-added">a R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000006</span><span class="diff-refine-added-0001">af</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc64_generic.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000006</span><span class="diff-refine-added-0001">cf</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000006fd</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000725</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000767</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000007</span><span class="diff-refine-added-0001">c8</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_lzma_optimum_fast.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000085e</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000008</span><span class="diff-refine-added-0001">a5</span><span class="diff-added"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000905</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000000939</span><span class="diff-added"> R_X86_64_PC32     .text.reverse_seez-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000096d</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000009</span><span class="diff-refine-added-0001">aa</span><span class="diff-added"> R_X86_64_PC32     .text.reverse_seez-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000009e7</span><span class="diff-added"> R_X86_64_PC32     .text.reverse_seez-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000a</span><span class="diff-refine-added-0001">70</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">aaa</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_encoder_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">ad8</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_encoder_update.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000b</span><span class="diff-refine-added-0001">0c</span><span class="diff-added"> R_X86_64_PLT32    .Lauto_decode.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000b</span><span class="diff-refine-added-0001">29</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_properties_size.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000b</span><span class="diff-refine-added-0001">6c</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_encoder_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">b99</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_encoder_update.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">bfb</span><span class="diff-added"> R_X86_64_PC32     .text.lzma_next_filter_inia-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000c</span><span class="diff-refine-added-0001">4b</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">ca8</span><span class="diff-added"> R_X86_64_PC32     .text.lzma_next_filter_inia-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000d</span><span class="diff-refine-added-0001">38</span><span class="diff-added"> R_X86_64_PLT32    .Lstream_encoder_mt_init.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000d</span><span class="diff-refine-added-0001">55</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_simple_x86_decoder_init.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">d8f</span><span class="diff-added"> R_X86_64_PLT32    .Lcrc_init.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">dae</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_mf_bt4_find.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">dff</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_update.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">eaa</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_block_buffer_encode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">0000000000000</span><span class="diff-refine-added-0001">ed2</span><span class="diff-added"> R_X86_64_PLT32    .Lx86_code.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000104e</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_filters_update.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001128</span><span class="diff-added"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001206</span><span class="diff-added"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001255</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_properties_size.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000012</span><span class="diff-refine-added-0001">dd</span><span class="diff-added"> R_X86_64_PLT32    .Lmicrolzma_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000132a</span><span class="diff-added"> R_X86_64_PC32     .text.transfora-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001384</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000013</span><span class="diff-refine-added-0001">a6</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000141b</span><span class="diff-added"> R_X86_64_PC32     .text.microlzma_decoder_inia-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001434</span><span class="diff-added"> R_X86_64_PLT32    lzma_free-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000145b</span><span class="diff-added"> R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000147f</span><span class="diff-added"> R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000014</span><span class="diff-refine-added-0001">a8</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000014</span><span class="diff-refine-added-0001">cc</span><span class="diff-added"> R_X86_64_PLT32    .Llzma2_decoder_end.1-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000014f5</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000151e</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001547</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000156f</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">0000000000001599</span><span class="diff-added"> R_X86_64_PLT32    .Llzma_check_init.part.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">000000000000167a</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-added">00000000000016</span><span class="diff-refine-added-0001">a0</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-indicator-added">+</span><span class="diff-refine-added-0001">00000000000016c6</span><span class="diff-added"> R_X86_64_PLT32    .Llzip_decode.0-0x0000000000000004
+</span><span class="diff-context"> 
+ 
+ RELOCATION RECORDS FOR [.text.lzma_validate_chaia]:
+</span><span class="diff-context">
+Diff finished.  Tue Apr  9 02:38:04 2024
+</span></pre>
+
+ </body>
+</html>
